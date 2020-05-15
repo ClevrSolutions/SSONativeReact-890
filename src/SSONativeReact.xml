@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="flowfabric.ssonativereact.SSONativeReact" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Native"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>SSONative React</name>
+    <description>SSO with react native</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="Data source">
+            <property key="callback" type="attribute" >
+                <caption>Callback</caption>
+                <description>The received callback from SSO.</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>    
+        <propertyGroup caption="General">
+            <property key="url" type="textTemplate" required="true">
+                <caption>URL</caption>
+                <description>The URL of the web page to be loaded.</description>
+            </property>
+            <property key="regexInclude" type="textTemplate" required="false">
+                <caption>Callback Regex include</caption>
+                <description>A Regex that searches the navigation url where the pattern should exist in the url. If the pattern exists (together with the Regex exclude), the On Callback event is triggered.</description>
+            </property>
+            <property key="regexExclude" type="textTemplate" required="false">
+                <caption>Callback Regex exclude</caption>
+                <description>A Regex that searches the navigation url where the pattern should not exist in the url. If the pattern does not exist (together with the Regex include), the On Callback event is triggered.</description>
+            </property>
+            <property key="regexOnLoadInclude" type="textTemplate" required="false">
+                <caption>Onload Regex include</caption>
+                <description>A Regex that searches the navigation url where the pattern should exist in the url. If the pattern does exists, the On Load event is triggered. If this property is empty on load will trigger always.</description>
+            </property>
+        </propertyGroup>    
+        <propertyGroup caption="Events">
+            <property key="onLoad" type="action" required="false">
+                <caption>On load</caption>
+                <description/>
+            </property>
+            <property key="onError" type="action" required="false">
+                <caption>On error</caption>
+                <description/>
+            </property>
+            <property key="onCallback" type="action" required="false">
+                <caption>On callback</caption>
+                <description/>
+            </property>
+        </propertyGroup>        
+    </properties>
+</widget>
